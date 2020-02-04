@@ -20,4 +20,23 @@ class Login extends Component {
             }
         })
     }
+    render() {
+        return (
+            <div>
+                <form onSubmit={this.confirmation.bind(this)}>
+                    <label>
+                        Name:
+                        <input type="text" ref={node => this.loginName = node} />
+                    </label>
+                    <label>
+                        Password:
+                        <input type="text" ref={node => this.loginPassword = node} />
+                    </label>
+                    <input type="submit" value="Submit" />
+                </form>
+                <button onClick={this.PaymentResponse.nextStep}>Create New User</button>
+            </div>
+        )
+    }
 }
+
