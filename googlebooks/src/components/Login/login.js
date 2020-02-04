@@ -4,7 +4,9 @@ class Login extends Component {
     confirmation(e) {
         e.preventDefault()
         const data = {
-            'name': this.loginName.value,
+            'firstName': this.loginfirstName.value,
+            'lastName': this.loginlastName.value,
+            'username': this.loginUsername.value,
             'password': this.loginPassword.value,
         }
         $.ajax({
@@ -25,8 +27,16 @@ class Login extends Component {
             <div>
                 <form onSubmit={this.confirmation.bind(this)}>
                     <label>
-                        Name:
-                        <input type="text" ref={node => this.loginName = node} />
+                        First Name:
+                        <input type="text" ref={node => this.loginfirstName = node} />
+                    </label>
+                    <label>
+                        Last Name:
+                        <input type="text" ref={node => this.loginlastName = node} />
+                    </label>
+                    <label>
+                        Username:
+                        <input type="text" ref={node => this.loginUsername = node} />
                     </label>
                     <label>
                         Password:
